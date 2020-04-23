@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.2
 // @description  use AM/PM format for /currentTime command in Roam Research
-// @downloadURL  https://raw.githubusercontent.com/palashkaria/roam-modifiers/master/time-format.user.js
+// @downloadURL  https://raw.github.com/palashkaria/roam-modifiers/master/time-format.user.js
 // @author       palashkaria
 // @match        https://roamresearch.com
 // @grant        none
