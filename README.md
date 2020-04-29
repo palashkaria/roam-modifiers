@@ -5,6 +5,9 @@
 
 The Bear theme, from https://github.com/apg-dev/roam-theme-bear, some colors have been tweaked.
 
+Use [stylus](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne?hl=en) for applying these
+
+
 ## Tampermonkey scripts
 Click on the raw github link to trigger a tampermonkey download.
 
