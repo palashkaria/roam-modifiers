@@ -2,7 +2,7 @@
 // @name         Roam live preview
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  use AM/PM format for /currentTime command in Roam Research
+// @description  Live preview for page refs on hover
 // @author       palashkaria
 // @match        https://roamresearch.com
 // @downloadURL  https://raw.github.com/palashkaria/roam-modifiers/master/roam-live-preview.user.js
