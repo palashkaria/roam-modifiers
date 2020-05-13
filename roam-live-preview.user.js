@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Roam live preview
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Live preview for page refs on hover
 // @author       palashkaria
 // @match        https://roamresearch.com
