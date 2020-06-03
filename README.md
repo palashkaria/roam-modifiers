@@ -19,7 +19,7 @@ I have some more modifications applied on top of it.
   - (increase size on hover, have space around them (like OSX!))
   - This uses a tiny border CSS hack I learned, using border to create the space
 
-- Other modifications are mostly color changes :)
+- Other modifications are mostly color/width changes :)
 
 See images below
 
