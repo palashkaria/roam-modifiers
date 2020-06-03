@@ -46,8 +46,6 @@ textarea {
     font-size: 90%;
 }
 
-.rm-ref-page-view-title span {}
-
 .rm-reference-main .rm-reference-item .controls {
     margin-left: -1em;
 }
@@ -123,26 +121,7 @@ span.bp3-icon-small.bp3-icon-star {
     min-width: 200px;
     border-radius: 3px;
 }
-.rm-block-ref::before {
-    content: '⌗';
-    display: inline-block;
-    color: #4d94ff;
-    border-radius: 40px;
-    margin-right: 5px;
-    top: -2px;
-    position: relative;
-}
-.rm-block-ref {
-    display: inline-flex;
 
-    border-bottom: none;
-    font-size: 1em;
-    color: #627a9d;
-    background-color: #f5f7fa;
-}
-.rm-block-ref:hover {
-    cursor: pointer;
-}
 .checkmark {
     background: #fff;
 }
@@ -400,9 +379,12 @@ div::-webkit-scrollbar-thumb {
     background-color: #d1dbe2 !important;
 }
 
-/* hover scrollbar */
+/* OSX-like scrollbars (width increases on hover)
+ * default width is 6px - increases to 8px on hover
+ * spacing around is 2px (defined by the same-colored border)
+*/
 div::-webkit-scrollbar {
-    width: 10px;
+    width: 10px; 
     height: 10px;
     border-radius: 20px;
 }
@@ -464,14 +446,19 @@ div::-webkit-scrollbar-thumb:hover {
 .rm-page-ref-brackets {
     opacity: 0.4;
 }
+
+/* prevents annoying scroll on the sidebar */
+
 html { 
     overflow: hidden;
 }
 
+/* makes the shortcuts stick edge-to-edge, with spacing on the left */
 .starred-pages-wrapper {
     padding: 0 0 0 20px !important;
 }
 
+/* makes the seperater above shortcuts full width */
 .starred-pages-wrapper > div:first-child {
     position: absolute;
     left: 0;
@@ -480,17 +467,16 @@ html {
     background-color: #dbdbdb !important;
 }
 
-
-.roam-body-main .roam-body-main > .roam-center > div:first-child {
-    padding-right: calc((100% - 800px) / 2) !important;
-    padding-left: calc((100% - 800px) / 2) !important;
-}
-
-
 .block-highlight-yellow {
     background-color: #ffec99;
 }
 
+/* sidebar magic :)
+ * resets the padding changes when sidebar is visible. 
+ * This allows the sidebar to overlay the content, instead of pushing it. 
+ * on click, the content gets pushed (as expected)
+ * ~ is the sibling CSS selector; to detect the closed state of the sidebar
+ */
 .roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main {
     width: 100vw !important;
 } 
@@ -498,4 +484,26 @@ html {
 .roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main > .roam-center > div:first-child {
     padding-right: calc((100% - 800px) / 2) !important;
     padding-left: calc((100% - 800px) / 2) !important;
+}
+/*
+* ⌗ for block refs
+*/
+.rm-block-ref::before {
+    content: '⌗';
+    display: inline-block;
+    color: #4d94ff;
+    margin-right: 5px;
+    top: -2px;
+    position: relative;
+}
+.rm-block-ref {
+    display: inline-flex;
+    border-bottom: none;
+    font-size: 1em;
+    color: #627a9d;
+    background-color: #f5f7fa;
+}
+
+.rm-block-ref:hover {
+    cursor: pointer;
 }
