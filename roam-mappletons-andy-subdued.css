@@ -2,21 +2,26 @@
 They're free to download from Google:
 https://fonts.google.com/specimen/Lato
 https://fonts.google.com/specimen/Open+Sans  */
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
 }
+
 
 div,
 textarea {
-  font-family: 'Open Sans';
+    font-family: 'Open Sans';
 }
-
+.roam-topbar {
+    background: transparent;
+}
+.roam-body {
+    background-color: #fcfcfc;
+}
 .roam-block-container {
     max-width: 1000px;
 }
@@ -24,7 +29,6 @@ textarea {
 .rm-query {
     border: 0.5px solid #e4e9ec;
     border-radius: 5px;
-    
 }
 
 .rm-query .rm-query-title {
@@ -42,9 +46,7 @@ textarea {
     font-size: 90%;
 }
 
-.rm-ref-page-view-title span {
-    
-}
+.rm-ref-page-view-title span {}
 
 .rm-reference-main .rm-reference-item .controls {
     margin-left: -1em;
@@ -67,7 +69,6 @@ div.flex-v-box.starred-pages-wrapper > div.flex-h-box > span {
 div.roam-sidebar-container.noselect > div > div {
     font-size: 14px;
     letter-spacing: 0.03em;
-    
 }
 
 #block-input {
@@ -89,20 +90,18 @@ span.bp3-icon-small.bp3-icon-star {
 }
 
 #right-sidebar > div {
-    background-color: #f7f8fa;
+    background-color: #fcfcfc;
     border-left: 1px solid #e9ebef;
 }
-.rm-page-ref-brackets {
-    display: none;
-}
+
 .controls .simple-bullet-outer .simple-bullet-inner {
-    background-color: #e5e9f2;
+    background-color: #dde2ee;
 }
 .block-border-left {
-    border-left: 1px solid #fff;
+    border-left: 1px solid #dbdbdb;
 }
 .kanban-board {
-    background-color: #fff;
+    background-color: #fcfcfc;
 }
 .kanban-card {
     background-color: white;
@@ -125,21 +124,23 @@ span.bp3-icon-small.bp3-icon-star {
     border-radius: 3px;
 }
 .rm-block-ref::before {
-    content: '';
+    content: '⌗';
     display: inline-block;
-    width: 10px;
+    color: #4d94ff;
     border-radius: 40px;
-    height: 10px;
-    background: #ff913c;
     margin-right: 5px;
+    top: -2px;
+    position: relative;
 }
 .rm-block-ref {
+    display: inline-flex;
+
     border-bottom: none;
     font-size: 1em;
     color: #627a9d;
+    background-color: #f5f7fa;
 }
 .rm-block-ref:hover {
-    background: none;
     cursor: pointer;
 }
 .checkmark {
@@ -158,7 +159,7 @@ span.bp3-icon-small.bp3-icon-star {
     margin-right: 8px;
     flex: 1 1 100%;
     word-break: break-word;
-    background-color: #f7f9fb;
+    background-color: #f5f7fa;
     padding: 8px;
 }
 
@@ -174,7 +175,7 @@ span.bp3-icon-small.bp3-icon-star {
     color: #9aabd0;
 }
 .rm-page-ref-link-color {
-    color: #ec6f35;
+    color: #4d94ff;
     font-weight: 600;
 }
 a {
@@ -186,7 +187,7 @@ a {
     display: none;
 }
 .roam-body .roam-app .roam-sidebar-container {
-    background-color: white;
+    background-color: #fafafa;
     border-right: 1px #eee solid;
 }
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page,
@@ -203,6 +204,7 @@ a {
 #buffer.tall {
     height: calc(100vh - 50px);
 }
+
 .check-container {
     padding-right: 4px;
 }
@@ -344,64 +346,156 @@ span.rm-page-ref[data-tag="Alive"] {
 
 /* Andy Matuschak */
 .roam-center {
-  flex: 1 1 100% !important;
-  flex-basis: 10% !important;
+    flex: 1 1 100% !important;
+    flex-basis: 50% !important;
 }
 
 #right-sidebar {
-  background-color: white !important;
+    background-color: white !important;
 }
 
 #right-sidebar #roam-right-sidebar-content {
-  overflow: scroll !important;
-  white-space: normal;
-  display: flex;
-  align-content: flex-start;
-  /* Below is for masonry layout */
-  flex-flow: column wrap;
+    overflow: scroll !important;
+    white-space: normal;
+    display: flex;
+    align-content: flex-start;
+    /* Below is for masonry layout */
+    flex-flow: column wrap;
 }
 
 #right-sidebar #roam-right-sidebar-content > div {
-  position: relative;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  padding: 10px;
-  border: 0.5px solid #e4e9ec !important;
-  border-radius: 5px;
-  background-color: white !important;
-  align-self: flex-start;
-  margin-right: 0px !important;
-  /* Below is for masonry layout */
-  margin-bottom: 16px;
-  min-height: fit-content;
-  width: 600px;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    padding: 10px;
+    border: 0.5px solid #e4e9ec !important;
+    border-radius: 5px;
+    background-color: white !important;
+    align-self: flex-start;
+    margin-right: 0px !important;
+    /* Below is for masonry layout */
+    margin-bottom: 16px;
+    min-height: fit-content;
+    max-width: 600px
 }
 
 #right-sidebar #roam-right-sidebar-content > div > div:nth-child(2) {
-  resize: vertical;
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 780px;
+    resize: vertical;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 780px;
 }
 
 .roam-log-container .roam-log-page {
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 5px;
-  background-color: white !important;
+    padding: 10px;
+    border-top: 1px solid #dbdbdb;
 }
 
 /* Scrollbar improvements */
-div::-webkit-scrollbar {
-    width: 3px !important;
-    height: 3px !important;
-}
-
 div::-webkit-scrollbar-track {
-    background-color: #ffffff !important;
+    background-color: #fcfcfc!important;
 }
 
 div::-webkit-scrollbar-thumb {
     background-color: #d1dbe2 !important;
+}
+
+/* hover scrollbar */
+div::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+}
+div::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+}
+div::-webkit-scrollbar-thumb {
+    background-color: #d1dbe2;
+    border: 3px #fcfcfc solid;
+    border-radius: 20px;
+}
+div::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px #fcfcfc solid;
+}
+
+
+#buffer {
+    z-index: 1;
+}
+
+#buffer > div > div::-webkit-scrollbar-track {
+    background-color: #2f3537 !important;
+}
+
+
+#buffer > div > div::-webkit-scrollbar-thumb {
+    background-color: #d1dbe2 !important;
+}
+
+/* hover scrollbar */
+#buffer > div > div::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 20px;
+}
+#buffer > div > div::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+    /* change me to blue to match the background */
+}
+#buffer > div > div::-webkit-scrollbar-thumb {
+    background-color: #d1dbe2;
+    border: 3px #2f3537 solid;
+    border-radius: 20px;
+    /* change border color to blue to match the background */
+}
+#buffer > div > div::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 2px #2f3537 solid;
+}
+
+
+.roam-bullet-closed {
+    color: #a7bbc8;
+}
+
+.rm-page-ref-brackets {
+    opacity: 0.4;
+}
+html { 
+    overflow: hidden;
+}
+
+.starred-pages-wrapper {
+    padding: 0 0 0 20px !important;
+}
+
+.starred-pages-wrapper > div:first-child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #dbdbdb !important;
+}
+
+
+.roam-body-main .roam-body-main > .roam-center > div:first-child {
+    padding-right: calc((100% - 800px) / 2) !important;
+    padding-left: calc((100% - 800px) / 2) !important;
+}
+
+
+.block-highlight-yellow {
+    background-color: #ffec99;
+}
+
+.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main {
+    width: 100vw !important;
+} 
+
+.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main > .roam-center > div:first-child {
+    padding-right: calc((100% - 800px) / 2) !important;
+    padding-left: calc((100% - 800px) / 2) !important;
 }
