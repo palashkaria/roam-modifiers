@@ -369,6 +369,46 @@ span.rm-page-ref[data-tag="Alive"] {
     padding: 10px;
     border-top: 1px solid #dbdbdb;
 }
+/* modifications begin */
+
+/* sidebar magic 🔥 :)
+ * resets the padding changes when sidebar is visible. 
+ * This allows the sidebar to overlay the content, instead of pushing it. 
+ * on click, the content gets pushed (as expected)
+ * ~ is the sibling CSS selector; to detect the closed state of the sidebar
+ */
+.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main {
+    width: 100vw !important;
+} 
+
+.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main > .roam-center > div:first-child {
+    padding-right: calc((100% - 800px) / 2) !important;
+    padding-left: calc((100% - 800px) / 2) !important;
+}
+
+/*
+* ⌗ for block refs 🚀
+*/
+.rm-block-ref::before {
+    content: '⌗';
+    display: inline-block;
+    color: #4d94ff;
+    margin-right: 5px;
+    top: -2px;
+    position: relative;
+}
+.rm-block-ref {
+    display: inline-flex;
+    border-bottom: none;
+    font-size: 1em;
+    color: #627a9d;
+    background-color: #f5f7fa;
+}
+
+.rm-block-ref:hover {
+    cursor: pointer;
+}
+
 
 /* Scrollbar improvements */
 div::-webkit-scrollbar-track {
@@ -379,7 +419,7 @@ div::-webkit-scrollbar-thumb {
     background-color: #d1dbe2 !important;
 }
 
-/* OSX-like scrollbars (width increases on hover)
+/* OSX-like scrollbars 🤓 (width increases on hover)
  * default width is 6px - increases to 8px on hover
  * spacing around is 2px (defined by the same-colored border)
 */
@@ -425,19 +465,18 @@ div::-webkit-scrollbar-thumb:hover {
 #buffer > div > div::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 20px;
-    /* change me to blue to match the background */
 }
 #buffer > div > div::-webkit-scrollbar-thumb {
     background-color: #d1dbe2;
     border: 3px #2f3537 solid;
     border-radius: 20px;
-    /* change border color to blue to match the background */
 }
 #buffer > div > div::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.4);
     border: 2px #2f3537 solid;
 }
 
+/* other modifications */
 
 .roam-bullet-closed {
     color: #a7bbc8;
@@ -469,41 +508,4 @@ html {
 
 .block-highlight-yellow {
     background-color: #ffec99;
-}
-
-/* sidebar magic :)
- * resets the padding changes when sidebar is visible. 
- * This allows the sidebar to overlay the content, instead of pushing it. 
- * on click, the content gets pushed (as expected)
- * ~ is the sibling CSS selector; to detect the closed state of the sidebar
- */
-.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main {
-    width: 100vw !important;
-} 
-
-.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main > .roam-center > div:first-child {
-    padding-right: calc((100% - 800px) / 2) !important;
-    padding-left: calc((100% - 800px) / 2) !important;
-}
-/*
-* ⌗ for block refs
-*/
-.rm-block-ref::before {
-    content: '⌗';
-    display: inline-block;
-    color: #4d94ff;
-    margin-right: 5px;
-    top: -2px;
-    position: relative;
-}
-.rm-block-ref {
-    display: inline-flex;
-    border-bottom: none;
-    font-size: 1em;
-    color: #627a9d;
-    background-color: #f5f7fa;
-}
-
-.rm-block-ref:hover {
-    cursor: pointer;
 }
