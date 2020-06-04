@@ -1,5 +1,5 @@
 # roam-modifiers
- [userscripts](https://github.com/palashkaria/roam-modifiers#tampermonkey-scripts)/custom CSS files for Roam Research
+ [userscripts](#tampermonkey-scripts)/custom CSS files for Roam Research
 
 ## Styles
 
