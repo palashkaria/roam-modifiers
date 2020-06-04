@@ -1,0 +1,33 @@
+/* sidebar magic 🔥 :)
+ * resets the padding changes when sidebar is visible. 
+ * This allows the sidebar to overlay the content, instead of pushing it. 
+ * on click, the content gets pushed (as expected)
+ * ~ is the sibling CSS selector; to detect the closed state of the sidebar
+ */
+.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main {
+  width: 100vw !important;
+}
+
+.roam-sidebar-container:not([style^='left: 0px; top: 0px; bottom: 0px;']) ~ .roam-main .roam-body-main > .roam-center > div:first-child {
+  padding-right: calc((100% - 800px) / 2) !important;
+  padding-left: calc((100% - 800px) / 2) !important;
+}
+
+/* Prevents weird siderbar scroll */
+html {
+  overflow: hidden;
+}
+
+/*  more sidebar fixes */
+
+/* makes the shortcuts stick edge-to-edge, 
+ * with spacing on the left 
+*/
+.starred-pages-wrapper {
+  padding: 8px 0 !important;
+}
+
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page,
+.starred-pages-wrapper > div.flex-h-box {
+  padding-left: 20px;
+}
