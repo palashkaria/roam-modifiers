@@ -7,14 +7,13 @@ The mappletons-andy theme (thanks to [@mapplestons](https://twitter.com/Mappleto
 
 I have some more modifications applied on top of it. 
 
-- a viewdata square (⌗) for block refs 🚀
-    - Seems appropriate, as # evolved from ⌗ :)
-
 
 - Sidebar overlay/slide in - don't move content on hover 🔥
   - this is pretty hacky, but I am going to keep this updated if it breaks. I need it too much.
   
-  
+- Viewdata square (⌗) for block refs 🚀
+  - Seems appropriate, as # evolved from ⌗ :)
+
 - Better scrollbars 🤓
   - (increase size on hover, have space around them (like OSX!))
   - This uses a tiny border CSS hack I learned, using border to create the space
