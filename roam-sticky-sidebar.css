@@ -1,0 +1,77 @@
+
+/**
+ use variables to control colors, size.
+ delete the part below comment to remove any behaviour
+**/
+:root {
+    /** update colors for dark themes here */
+    --roamer-sb-bg: #f7f8fa;
+    --roamer-sb-card-bg: white;
+    --roamer-sb-card-border: #e4e9ec;
+    --roamer-sb-card-width: 600px;
+    /* leave blank for no prefix */
+    --roamer-sb-card-page-prefix: "Page "; 
+}
+
+.roam-center {
+    /* sidebar-to-content-ratio */
+    flex-basis: 50% !important;
+}
+
+
+#right-sidebar > div {
+    background-color: var(--roamer-sb-bg);
+}
+/* sidebar layout */
+#right-sidebar #roam-right-sidebar-content {
+    overflow: auto !important;
+    white-space: normal;
+    display: flex;
+    align-content: flex-start;
+    flex-direction: row;
+    height: 100%
+}
+
+#right-sidebar #roam-right-sidebar-content > div {
+    min-width: var(--roamer-sb-card-width);
+    background-color: var(--roamer-sb-card-bg);
+    border: 1px solid var(--roamer-sb-card-border) !important;
+    /* card layout */
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 4px;
+    align-self: flex-start;
+    margin-right: 0px !important;
+    height: 100% !important;
+}
+
+#right-sidebar #roam-right-sidebar-content > div > div:nth-child(2) {
+    /* adds scrollbar to card content */
+    overflow: auto;
+    padding: 0 8px 8px 8px !important;
+}
+
+/* sticky */
+#right-sidebar #roam-right-sidebar-content > div {
+    position: sticky;
+    left: 16px
+}
+
+/* page numbers */
+#right-sidebar #roam-right-sidebar-content {
+    counter-reset: page;
+}
+#right-sidebar #roam-right-sidebar-content > div > div:nth-child(1):before {
+    counter-increment: page;
+    content: var(--roamer-sb-card-page-prefix) counter(page);
+    padding: 0px 4px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+/** brings card to top on focus */
+#right-sidebar #roam-right-sidebar-content > div:focus-within {
+    z-index: 100;
+}
