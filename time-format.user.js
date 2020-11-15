@@ -5,7 +5,7 @@
 // @description  use AM/PM format for /currentTime command in Roam Research
 // @downloadURL  https://raw.github.com/palashkaria/roam-modifiers/master/time-format.user.js
 // @author       palashkaria
-// @match        https://roamresearch.com
+// @match        https://roamresearch.com/*
 // @grant        none
 // ==/UserScript==
 
